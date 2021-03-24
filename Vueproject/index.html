@@ -1,13 +1,53 @@
+
 <html>
+<head>
+    <link href="css/style.css" rel="stylesheet">
+</head>
 <body>
 <div id="example">
-    <p>{{ hello }}</p>
+    <p>{{hello}}</p>
+    <st-table id="sample" :columns="Wcolumns" :rows="Wrows"></st-table><br>
+    <st-table id="months" :columns="Mcolumns" :rows="Mrows"></st-table>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/simter-vue-table@0.6.1/dist/simter-vue-table.min.js"></script>
 <script src="https://unpkg.com/vue"></script>
 <script>
+    let table = window["simter-vue-table"].default;
+
     new Vue({
         el: '#example',
-        data: { hello: 'Hello World!' }
+        data: {
+        hello: 'Hello World!',
+            Wcolumns: [
+                { id: "key1", label: "Time period", width: "150px" },
+                { id: "key2", label: "Position", width: "100px" },
+                { id: "key3", label: "Song", width: "100px" },
+                { id: "key4", label: "Artist", width: "100px" }
+            ],
+            Wrows: [
+                { key1: "Past 4 weeks", key2: 1, key3: "Sekruina Graffti", key4: "Hatsune Miku" },
+                { key1: "", key2: 2, key3: "Sand planet", key4: "Juby phoinc" },
+                { key1: "", key2: 3, key3: "Grip", key4: "Seeb & Bastille" },
+                { key1: "", key2: 4, key3: "Ayo Technology ", key4: "Milow" },
+                { key1: "", key2: 5, key3: "Odds and Ends", key4: "Ryo Super cell" }
+            ],
+            Mcolumns: [
+                { id: "key1", label: "Time period", width: "150px" },
+                { id: "key2", label: "Position", width: "100px" },
+                { id: "key3", label: "Song", width: "100px" },
+                { id: "key4", label: "Artist", width: "100px" }
+            ],
+            Mrows: [
+                { key1: "Past 2 months", key2: 1, key3: "Sekruina Graffti", key4: "Hatsune Miku" },
+                { key1: "", key2: 2, key3: "Sand planet", key4: "Juby phoinc" },
+                { key1: "", key2: 3, key3: "Grip", key4: "Seeb & Bastille" },
+                { key1: "", key2: 4, key3: "Ayo Technology ", key4: "Milow" },
+                { key1: "", key2: 5, key3: "Odds and Ends", key4: "Ryo Super cell" }
+            ],
+        },
+        components: {
+            "st-table": table
+        }
     })
 </script>
 </body>
