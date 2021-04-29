@@ -1,0 +1,16 @@
+name: Java pipeline with Maven
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+
+  jobs:
+    Explore-Github-Actions:
+      runs-on: ubuntu-latest
+      steps:
+        - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+        name: Check out repository code
+        uses: actions/checkout@v2
+        - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
