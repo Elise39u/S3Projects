@@ -1,9 +1,9 @@
 name: Java pipeline with Maven
 on:
   push:
-    branches: [main]
+    branches: [454654]
   pull_request:
-    branches: [main]
+    branches: [35245]
 
 
 jobs:
