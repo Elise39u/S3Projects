@@ -7,7 +7,7 @@ on:
 
 
   jobs:
-    Explore-Github-Actions:
+    build:
       runs-on: ubuntu-latest
       steps:
         - name: Check out repository code
