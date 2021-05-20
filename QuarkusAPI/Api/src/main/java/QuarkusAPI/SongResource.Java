@@ -12,6 +12,7 @@ public class SongResource {
 
     public SongResource() {
         Songs.add(new Song("Because Your Here", "Hatsune Miku"));
-        Songs.add(new SOng("Im glad i met You", "Hatsune Miku and Justin"))
+        Songs.add(new Song("Im glad i met You", "Hatsune Miku and Justin"));
+        Songs.add(new Song("Calc.", "Hatsune Miku"))
     }
 }
