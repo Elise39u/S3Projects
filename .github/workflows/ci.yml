@@ -17,5 +17,5 @@ jobs:
           java-version: '15'
           distribution: 'adopt'
       - name: Build with Maven
-        working-directory: ././QuarkusAPI/Api
+        working-directory: ./QuarkusAPI
         run: mvn clean package -Dquarkus.container-image.build=true -Dquarkus.container-image.push=true
