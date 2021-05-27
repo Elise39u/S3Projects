@@ -13,7 +13,7 @@ Version used for the developement of this project 15.0.2
 
 # Step 2 Maven
 Make sure tha you have Maven installed on your device.
-Download link can be found here.
+Download link can be found here: https://maven.apache.org/download.cgi
 Version used for the developement of this project 3.8.1.
 
 # Step 3 JAVA_HOME and MAVEN_HOME
