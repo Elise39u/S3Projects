@@ -2,6 +2,10 @@
 I am gonna explain the steps taken to install the Quarkus API
 There are only a few step that you neeed to take.
 
+# Step 0 NodeJS
+Also to start you need for Quarkus nodjes installed.
+You should get that latest version installed from: https://azure.microsoft.com/nl-nl/free/nodejs/search/?&ef_id=Cj0KCQjwhr2FBhDbARIsACjwLo3DRh00Yb_xgdsC97C0CzA4exua91JbVPit6C7zfdXBerIHIn9oLGwaAmoCEALw_wcB:G:s&OCID=AID2100079_SEM_Cj0KCQjwhr2FBhDbARIsACjwLo3DRh00Yb_xgdsC97C0CzA4exua91JbVPit6C7zfdXBerIHIn9oLGwaAmoCEALw_wcB:G:s&gclid=Cj0KCQjwhr2FBhDbARIsACjwLo3DRh00Yb_xgdsC97C0CzA4exua91JbVPit6C7zfdXBerIHIn9oLGwaAmoCEALw_wcB
+
 # Step 1 JDK
 Make sure that you have JDK 15 or higher installed.
 Downloads can bee found here: https://jdk.java.net/
