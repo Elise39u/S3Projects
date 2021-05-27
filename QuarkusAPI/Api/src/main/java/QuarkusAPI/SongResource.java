@@ -12,7 +12,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("/Songs")
-public class TestSongResource {
+public class SongResource {
 
     private Set<Song> Songs = Collections.newSetFromMap(Collections.synchronizedMap(new LinkedHashMap<>()));
 
@@ -28,17 +28,17 @@ public class TestSongResource {
         return Songs;
     }
 
-    @Post
+    @POST
     @Path("/AddSong")
     public Set<Song> AddSong(Song song) {
-        Songs.add(new Song(song));
+        Songs.add(new Song(song.Name, song.Artist));
         return Songs;
     }
 
     @DELETE
     @Path("/DeleteSong")
     public Set<Song> DeleteSong(Song song) {
-        Songs.remove(exsitingSong -> exsitingSong.Name.contentEquals(song.name));
+        Songs.removeIf(exsitingSong -> exsitingSong.Name.contentEquals(song.Name));
         return Songs;
     }
 }

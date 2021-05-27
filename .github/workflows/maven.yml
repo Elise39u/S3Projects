@@ -24,3 +24,6 @@ jobs:
     - name: Build with Maven
       run: mvn clean package -Dquarkus.container-image.build=true -Dquarkus.container-image.push=true
       working-directory: ./QuarkusAPI/Api
+    - name: Test with Maven
+      working-directory: ./QuarkusAPI/Api
+      run: mvn test
