@@ -25,14 +25,27 @@ public class SongResource {
     @GET
     @Path("/GetAllSongs")
     public Set<Song> list() {
-        return Songs;
+        int songsCount = Songs.size();
+
+        if(songsCount > 0) {
+            return Songs;
+        } else {
+            throw new NotFoundException("Me and Miku looked really hard but we found: " + songsCount + " amount of songs");
+        }
+
     }
 
     @POST
     @Path("/AddSong")
     public Set<Song> AddSong(Song song) {
-        Songs.add(new Song(song.Name, song.Artist));
-        return Songs;
+        if(song.Name == "" || song.Name == null || song.Artist == null || song.Artist == "") {
+           // send a 400
+           throw new BadRequestException("Sorry but we looked across your data and its seems to be invalid");
+        }
+        else {
+            Songs.add(new Song(song.Name, song.Artist));
+            return Songs;
+        }
     }
 
     @DELETE
