@@ -47,4 +47,15 @@ public class SongResourceTest {
                         "name", containsInAnyOrder("Because Your Here", "Im glad i met You", "Calc."),
                         "Artist", containsInAnyOrder("Hatsune Miku", "Hatsune Miku and Justin", "Hatsune Miku"));
     }
+
+    @Test
+    public void AddWrongSong() {
+        given()
+                .body("{\"name\": \"\", \"Artist\": \"Hatsune Miku\"}")
+                .header("Content-Type", MediaType.APPLICATION_JSON)
+                .when()
+                .post("/AddSong")
+                .then()
+                .statusCode(400);
+    }
 }

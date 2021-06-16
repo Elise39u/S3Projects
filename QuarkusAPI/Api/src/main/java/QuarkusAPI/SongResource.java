@@ -51,7 +51,11 @@ public class SongResource {
     @DELETE
     @Path("/DeleteSong")
     public Set<Song> DeleteSong(Song song) {
-        Songs.removeIf(exsitingSong -> exsitingSong.Name.contentEquals(song.Name));
-        return Songs;
+        if(Songs.containsKey(song.Name)) {
+            Songs.removeIf(exsitingSong -> exsitingSong.Name.contentEquals(song.Name));
+            return Songs;
+        } else {
+            throw new NotFoundException("Well i looked but couldnt find your song? are you sure the data is correct")
+        }
     }
 }
