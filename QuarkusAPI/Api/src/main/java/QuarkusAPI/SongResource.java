@@ -10,6 +10,8 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.BadRequestException;
+import javax.ws.rs.NotFoundException;
 
 @Path("/Songs")
 public class SongResource {
@@ -51,11 +53,7 @@ public class SongResource {
     @DELETE
     @Path("/DeleteSong")
     public Set<Song> DeleteSong(Song song) {
-        if(Songs.containsKey(song.Name)) {
-            Songs.removeIf(exsitingSong -> exsitingSong.Name.contentEquals(song.Name));
-            return Songs;
-        } else {
-            throw new NotFoundException("Well i looked but couldnt find your song? are you sure the data is correct");
-        }
+        Songs.removeIf(exsitingSong -> exsitingSong.Name.contentEquals(song.Name));
+        return Songs;
     }
 }
