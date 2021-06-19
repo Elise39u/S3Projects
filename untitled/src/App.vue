@@ -6,12 +6,11 @@
       <a class="" href="">Personal Info</a>
       <a class="" href="">Recent Songs</a>
       <a class="" href="">Saved Info</a>
-      <a class="" href="">Logout</a>
+      <a id="app" class="" href="">Logout</a>
     </div>
   </div>
   </ul>
 </template>
-
 <script>
  export default  {
    name: 'App'
