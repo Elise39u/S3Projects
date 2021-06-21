@@ -1,5 +1,4 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
   <GettingData msg="API getting data test"/>
 </template>
 

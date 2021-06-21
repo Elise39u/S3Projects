@@ -26,7 +26,7 @@ public class SongResourceTest {
     @Test
     public void testAdd() {
         given()
-                .body("{\"name\": \"Melt\", \"Artist\": \"Hatsune Miku\"}")
+                .body("{\"Id\": 4, \"name\": \"Melt\", \"Artist\": \"Hatsune Miku\"}")
                 .header("Content-Type", MediaType.APPLICATION_JSON)
                 .when()
                 .post("/AddSong")
@@ -37,7 +37,7 @@ public class SongResourceTest {
                         "Artist", containsInAnyOrder("Hatsune Miku", "Hatsune Miku and Justin", "Hatsune Miku", "Hatsune Miku"));
 
         given()
-                .body("{\"name\": \"Melt\", \"Artist\": \"Hatsune Miku\"}")
+                .body("{\"Id\": 4, \"name\": \"Melt\", \"Artist\": \"Hatsune Miku\"}")
                 .header("Content-Type", MediaType.APPLICATION_JSON)
                 .when()
                 .delete("/DeleteSong")
@@ -51,7 +51,7 @@ public class SongResourceTest {
     @Test
     public void AddWrongSong() {
         given()
-                .body("{\"name\": \"\", \"Artist\": \"Hatsune Miku\"}")
+                .body("{\"Id\": 4, \"name\": \"\", \"Artist\": \"Hatsune Miku\"}")
                 .header("Content-Type", MediaType.APPLICATION_JSON)
                 .when()
                 .post("/AddSong")

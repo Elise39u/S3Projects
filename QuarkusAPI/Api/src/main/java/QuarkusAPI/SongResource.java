@@ -15,9 +15,9 @@ public class SongResource {
     private Set<Song> Songs = Collections.newSetFromMap(Collections.synchronizedMap(new LinkedHashMap<>()));
 
     public SongResource() {
-        Songs.add(new Song("Because Your Here", "Hatsune Miku"));
-        Songs.add(new Song("Im glad i met You", "Hatsune Miku and Justin"));
-        Songs.add(new Song("Calc.", "Hatsune Miku"));
+        Songs.add(new Song(1, "Because Your Here", "Hatsune Miku"));
+        Songs.add(new Song(2, "Im glad i met You", "Hatsune Miku and Justin"));
+        Songs.add(new Song(3, "Calc.", "Hatsune Miku"));
     }
 
     @GET
@@ -41,7 +41,7 @@ public class SongResource {
            throw new BadRequestException("Sorry but we looked across your data and its seems to be invalid");
         }
         else {
-            Songs.add(new Song(song.Name, song.Artist));
+            Songs.add(new Song(song.Id, song.Name, song.Artist));
             return Songs;
         }
     }
