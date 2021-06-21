@@ -13,6 +13,7 @@
 
 <script>
     export default {
+        name: "Home",
         created () {
             alert("Your in the home view");
 
@@ -47,7 +48,6 @@
             Songs: [],
             loading: true,
         }),
-        name: "Home",
         msg: "Test message",
     }
 </script>
